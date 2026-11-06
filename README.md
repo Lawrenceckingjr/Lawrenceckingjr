@@ -13,7 +13,9 @@ Before AI, I made hip-hop, organized local concerts, and worked with video. That
 | **Fault recovery and end-to-end testing** | Verified that a restarted dispatcher reused a completed shot and finished the sequence. Checked final frame count, duration, and audio against acceptance criteria. |
 | **Multimodal evaluation and release decisions** | Investigated a failed image-caption diagnostic in Shumai. On Dragon Forge, I accepted restart recovery and held creative sign-off when audio and visual continuity still needed work. |
 | **GPU inference and Linux systems integration** | Ran a 27B-class model locally, validated Vulkan and ROCm/HIP inference on Ubuntu, and connected Linux machines using SSH and NFS. AMD ROCm Certified Associate. |
-| **Retrieval-augmented generation (RAG) foundations and source attribution** | Organized source documents, an index, and query logs for research. In a separate curation project, retained 69 timestamped cues so a reviewer could trace a summary to the original clip. |
+| **Permission-aware retrieval for RAG** | My VSF project exercised PostgreSQL and pgvector top-k retrieval with permission filtering and reranking. A story fixture caught a concealed fact reaching the wrong character. The project recorded 48/48 fault-matrix cases passing after repairs. |
+| **SQL and database reliability** | My commerce tooling project validated the same application against SQLite and PostgreSQL. The merged milestone recorded 123 SQLite tests, 110 PostgreSQL behavioral tests, and 32 checks covering access controls, migrations, and backup/restore. All passed on test data. |
+| **Continuous integration and local deployment** | Four GitHub Actions checks passed on the commerce milestone, covering Python, .NET, extension validation, and secret/schema scanning. Separately, I accepted a pinned Shumai container release after deployed-image checks, with a rollback image retained and known performance misses recorded. |
 
 ![Two consecutive Dragon Forge shots compared at the cut](portfolio/frame-handoff.webp)
 
@@ -56,6 +58,10 @@ My first attempt to connect my Nebula and Forge machines over SSH returned “No
 
 On Windows 11 Pro, I set up **LumaRoleRAG**, a research workspace for studying image and video models. I organized source PDFs, processed text, an index, and query logs so I could trace an answer back to the material I was studying. This was an early step from using AI to answer questions toward designing how a tool should support an investigation.
 
+### September 2026 · Finding a bottleneck at 10,000 scenes
+
+In an AI-assisted VSF engineering project, I held a scene-write benchmark to its original **250 ms median target**. The first 10,000-scene run missed it at **879.5 ms**. After repair, a clean rerun measured **153.9 ms median** and **218.7 ms at the 95th percentile**. SQL checks counted the 10,000 scenes back out of the test database. These figures describe a controlled benchmark on disposable data.
+
 ### October 2026 · Building a local AI review desk
 
 ![A fast answer can still fail the task](portfolio/shumai.svg)
@@ -66,13 +72,13 @@ With **Shumai**, I brought media uploads, viewing, comments, and local model cha
 
 ![One laptop, two GPU paths](portfolio/hardware.svg)
 
-I connected a **24 GB Radeon RX 7900 XTX** to an HP Victus laptop through an **M.2-to-OCuLink eGPU link** with its own desktop power supply. The laptop also carries an **8 GB RTX 4060**. On Ubuntu 24.04 LTS, I validated local inference through Vulkan and ROCm/HIP, checked the hardware under load, and ran a 27B-class language model locally. I earned the **AMD ROCm Certified Associate** credential in November.
+I connected a **24 GB Radeon RX 7900 XTX** to an HP Victus laptop through an **M.2-to-OCuLink eGPU link** with its own desktop power supply. The laptop also carries an **8 GB RTX 4060**. On Ubuntu 24.04 LTS, I validated local inference through Vulkan and ROCm/HIP, checked the hardware under load, and ran a 27B-class language model locally. One experimental ROCm run of a quantized 27B model recorded **914 prompt tokens/s** and **32.8 generated tokens/s**. I earned the **AMD ROCm Certified Associate** credential in November.
 
 ### November 2026 · From automation to filmmaking
 
 ![Following an automation to its output](portfolio/automation.svg)
 
-**Workflow automation.** I connected n8n to ComfyUI with a JSON request, captured the returned job ID, and checked that the image was actually saved. That last check is the one I care about: a service accepting a request and a user receiving a deliverable are two different events.
+**Workflow automation.** My first recorded run of this integration was in October 2025. I connected n8n to ComfyUI with a JSON request, captured the returned job ID, and checked that the image was actually saved. That last check is the one I care about: a service accepting a request and a user receiving a deliverable are two different events.
 
 **Dragon Forge.** In one local run, my mixed-GPU workflow assembled three 10-second shots into a 30-second sequence at 60 fps in under 16 minutes. A later pilot demonstrated restart recovery: after the dispatcher stopped, it recognized the completed first shot and continued with the next two. I could also trim the assembled sequence without paying the compute cost of generating it again.
 
