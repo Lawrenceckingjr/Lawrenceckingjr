@@ -12,6 +12,23 @@ I learned by building the pieces I needed. My public trail runs from a data scie
 
 [Read the engineering release review](portfolio/engineering-review.md) · [Inspect the original notebook](https://github.com/Lawrenceckingjr/DataScienceEcosystem/blob/main/DataScienceEcosystem.ipynb)
 
+## How I lead one project across a phone, a laptop, and multiple AI tools
+
+On Visual Story Factory, I use **ChatGPT** to work through design decisions, **Claude Code** to implement a bounded change, and **Codex** to challenge the result against the acceptance criteria. **Visual Studio Code** is where I inspect the project on my laptop. I own the decision about what ships.
+
+**Phone Mode** lets me review a short handoff between sessions: what changed, what evidence supports it, and which decision needs me. **Laptop Mode** gives me the detail behind that handoff: I can inspect the diff, rerun a check, or play the actual output. Both views answer the same question: *what evidence would make me accept this change?*
+
+In the **Dragon Forge** pilot, the restart record showed that the dispatcher resumed without regenerating the first shot. The finished video told a different part of the story: two audio tracks were below the required floor. I could accept the recovery behavior while holding the audio work open. [See the checks and the release decision.](portfolio/engineering-review.md)
+
+### Custom skills I built for my own work
+
+| Skill | What it lets me do |
+|---|---|
+| **Handoff Prompt (HOP)** | Move a long-running project into a fresh session or onto another device with the last verified result, open questions, and next decision in hand. I can pick up the work without reconstructing a week of conversation. |
+| **Clip Knowledge Curator (CKC)** | Turn a technical clip into a reference I can revisit. When a build raises a question I studied weeks ago, I can jump back to the relevant moment and check the source before applying the lesson. |
+
+I also use a **Greenlight** convention across tools. I can explore a proposal from my phone, narrow its scope, and authorize a specific piece of work when I’m ready. That keeps design discussions useful while giving implementation and review a clear starting point.
+
 ### June 2025 · Data science in Jupyter
 
 ![Data science in Jupyter](portfolio/notebook.svg)
