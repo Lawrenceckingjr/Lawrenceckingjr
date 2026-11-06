@@ -1,10 +1,19 @@
 # Lawrence King
 
-**Founder of Visual Story Factory · Local AI systems, workflow automation, and videography**
+**Founder of Visual Story Factory | Applied AI engineering · Workflow automation · Multimodal evaluation**
 
 Before AI, I made hip-hop, organized local concerts, and worked with video. That’s where I learned to listen for a bad mix and notice when a cut breaks a scene. Those instincts still drive my engineering. A render can finish successfully and still deliver a shot I would never show an audience.
 
-I learned by building the pieces I needed. My public trail runs from a data science notebook in 2025 to a two-machine Linux setup, a local AI media review desk, and a mixed-GPU filmmaking workflow. Here are the milestones I can put a date and a result to.
+## Technical capabilities
+
+| Capability | Evidence from my projects |
+|---|---|
+| **API integration and workflow orchestration** | Connected n8n to ComfyUI with JSON, tracked asynchronous jobs by ID, and verified the saved output. |
+| **Input validation and regression testing** | Reviewed positive and negative test cases for input contracts and GPU readiness. Four malformed queue responses exposed a separate polling defect. The archived pilot suite recorded 377 passing tests and 260 warnings. |
+| **Fault recovery and end-to-end testing** | Verified that a restarted dispatcher reused a completed shot and finished the sequence. Checked final frame count, duration, and audio against acceptance criteria. |
+| **Multimodal evaluation and release decisions** | Investigated a failed image-caption diagnostic in Shumai. On Dragon Forge, I accepted restart recovery and held creative sign-off when audio and visual continuity still needed work. |
+| **GPU inference and Linux systems integration** | Ran a 27B-class model locally, validated Vulkan and ROCm/HIP inference on Ubuntu, and connected Linux machines using SSH and NFS. AMD ROCm Certified Associate. |
+| **Retrieval-augmented generation (RAG) foundations and source attribution** | Organized source documents, an index, and query logs for research. In a separate curation project, retained 69 timestamped cues so a reviewer could trace a summary to the original clip. |
 
 ![Two consecutive Dragon Forge shots compared at the cut](portfolio/frame-handoff.webp)
 
